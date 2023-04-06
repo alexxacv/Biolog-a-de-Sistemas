@@ -30,7 +30,7 @@ t_eval = np.linspace(t0, tf, 1000)  # Es el vector de tiempo para evaluar la sol
 # Ahora se resuelven las ecuaciones diferenciales
 sol = solve_ivp(lotka_volterra, [t0, tf], y_init, t_eval=t_eval, args=(a, b, c, d))
 
-# Imprimir los resultados de las ecuaciones diferenciales
+# Imprimimos los resultados de las ecuaciones diferenciales
 print(sol.y)
 
 # Finalmente se Grafica la solución
