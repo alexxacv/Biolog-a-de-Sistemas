@@ -9,7 +9,6 @@ def lotka_volterra(t, y, a, b, c, d):
     x, y = y
     dxdt = a*x - b*x*y
     dydt = c*x*y - d*y
-    print(f"dx/dt={dxdt}, dy/dt={dydt}") #Esto imprime lo resultados de las E.D. en cada iteracción
     return [dxdt, dydt]
 
 # Definimos los parámetros del modelo
@@ -31,7 +30,8 @@ t_eval = np.linspace(t0, tf, 1000)  # Es el vector de tiempo para evaluar la sol
 # Ahora se resuelven las ecuaciones diferenciales
 sol = solve_ivp(lotka_volterra, [t0, tf], y_init, t_eval=t_eval, args=(a, b, c, d))
 
-
+# Imprimir los resultados de las ecuaciones diferenciales
+print(sol.y)
 
 # Finalmente se Grafica la solución
 plt.plot(sol.t, sol.y[0], label='Presa')
