@@ -15,3 +15,4 @@ Lista de ejercicios:
 3. Lotka-Volterra: Generar un modelo de Lotka-Volterra con 2 y 3 especies.
 
 
+Proyecto de clase:
