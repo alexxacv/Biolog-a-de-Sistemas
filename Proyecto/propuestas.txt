@@ -1,3 +1,4 @@
-1. Análisis de datos de expresión génica o proteomas
-2. Simular una red metabolica
-3. Simular una red de regulación genica, y como esta modifica la expresión del gen
+1. Análisis de datos de expresión génica o proteomas.
+2. Simular una red metabolica.
+3. Simular una red de regulación genica, y como esta modifica la expresión del gen.
+4. Analisis de genómas para encontrar patrones.
