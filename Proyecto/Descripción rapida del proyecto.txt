@@ -1,0 +1,3 @@
+Modelado del operon lac de Escherichia coli en:
+1. Dinamica en python mediante ecuaciones diferenciales
+2. Dinamic en TinkerCell
