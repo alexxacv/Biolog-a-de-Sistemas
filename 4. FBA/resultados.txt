@@ -1,0 +1,4 @@
+PS C:\Users\alexc> & C:/Users/alexc/AppData/Local/Programs/Python/Python311/python.exe "c:/Users/alexc/Desktop/FBA Script.py"
+13 reactions initially
+13 metabolites initially
+0 genes initially
