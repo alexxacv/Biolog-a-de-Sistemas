@@ -1,1 +1,151 @@
+Boolean network with 10 genes
 
+Involved genes:
+CycD Rb E2F CycE CycA p27 Cdc20 Cdh1 UbcH10 CycB
+
+Transition functions:
+CycD = CycD
+Rb = (! CycA & ! CycB & ! CycD & ! CycE) | (p27 & ! CycB & ! CycD)
+E2F = (! Rb & ! CycA & ! CycB) | (p27 & ! Rb & ! CycB)
+CycE = (E2F & ! Rb)
+CycA = (E2F & ! Rb & ! Cdc20 & ! (Cdh1 & UbcH10)) | (CycA & ! Rb & ! Cdc20 & ! (Cdh1 & UbcH10))
+p27 = (! CycD & ! CycE & ! CycA & ! CycB) | (p27 & ! (CycE & CycA) & ! CycB &! CycD)
+Cdc20 = CycB
+Cdh1 = (! CycA & ! CycB) | (Cdc20) | (p27 & ! CycB)
+UbcH10 = ! Cdh1 | (Cdh1 & UbcH10 & (Cdc20 | CycA | CycB))
+CycB = ! Cdc20 & ! Cdh1
+> data(cellcycle) # Cargar datos de prueba que vienen con la instalación del paquete
+> cellcycle
+Boolean network with 10 genes
+
+Involved genes:
+CycD Rb E2F CycE CycA p27 Cdc20 Cdh1 UbcH10 CycB
+
+Transition functions:
+CycD = CycD
+Rb = (! CycA & ! CycB & ! CycD & ! CycE) | (p27 & ! CycB & ! CycD)
+E2F = (! Rb & ! CycA & ! CycB) | (p27 & ! Rb & ! CycB)
+CycE = (E2F & ! Rb)
+CycA = (E2F & ! Rb & ! Cdc20 & ! (Cdh1 & UbcH10)) | (CycA & ! Rb & ! Cdc20 & ! (Cdh1 & UbcH10))
+p27 = (! CycD & ! CycE & ! CycA & ! CycB) | (p27 & ! (CycE & CycA) & ! CycB &! CycD)
+Cdc20 = CycB
+Cdh1 = (! CycA & ! CycB) | (Cdc20) | (p27 & ! CycB)
+UbcH10 = ! Cdh1 | (Cdh1 & UbcH10 & (Cdc20 | CycA | CycB))
+CycB = ! Cdc20 & ! Cdh1
+> attractors <- getAttractors(cellcycle) # Calcular los atractores
+> par( mfrow=c(1,2) ) # hacer un espacio de 1 fila y 2 columnas en el área de plot
+> plotAttractors(attractors)
+$`1`
+       Attr1.1
+CycD         0
+Rb           1
+E2F          0
+CycE         0
+CycA         0
+p27          1
+Cdc20        0
+Cdh1         1
+UbcH10       0
+CycB         0
+
+$`7`
+       Attr2.1 Attr2.2 Attr2.3 Attr2.4 Attr2.5 Attr2.6 Attr2.7
+CycD         1       1       1       1       1       1       1
+Rb           0       0       0       0       0       0       0
+E2F          0       0       0       0       1       1       1
+CycE         1       0       0       0       0       1       1
+CycA         1       1       1       0       0       0       1
+p27          0       0       0       0       0       0       0
+Cdc20        0       0       1       1       0       0       0
+Cdh1         0       0       0       1       1       1       1
+UbcH10       0       1       1       1       1       0       0
+CycB         0       1       1       0       0       0       0
+
+> data(cellcycle) # Cargar datos de prueba que vienen con la instalación del paquete
+> cellcycle
+Boolean network with 10 genes
+
+Involved genes:
+CycD Rb E2F CycE CycA p27 Cdc20 Cdh1 UbcH10 CycB
+
+Transition functions:
+CycD = CycD
+Rb = (! CycA & ! CycB & ! CycD & ! CycE) | (p27 & ! CycB & ! CycD)
+E2F = (! Rb & ! CycA & ! CycB) | (p27 & ! Rb & ! CycB)
+CycE = (E2F & ! Rb)
+CycA = (E2F & ! Rb & ! Cdc20 & ! (Cdh1 & UbcH10)) | (CycA & ! Rb & ! Cdc20 & ! (Cdh1 & UbcH10))
+p27 = (! CycD & ! CycE & ! CycA & ! CycB) | (p27 & ! (CycE & CycA) & ! CycB &! CycD)
+Cdc20 = CycB
+Cdh1 = (! CycA & ! CycB) | (Cdc20) | (p27 & ! CycB)
+UbcH10 = ! Cdh1 | (Cdh1 & UbcH10 & (Cdc20 | CycA | CycB))
+CycB = ! Cdc20 & ! Cdh1
+> attractors <- getAttractors(cellcycle) # Calcular los atractores
+> par( mfrow=c(1,2) ) # hacer un espacio de 1 fila y 2 columnas en el área de plot
+> plotAttractors(attractors)
+$`1`
+       Attr1.1
+CycD         0
+Rb           1
+E2F          0
+CycE         0
+CycA         0
+p27          1
+Cdc20        0
+Cdh1         1
+UbcH10       0
+CycB         0
+
+$`7`
+       Attr2.1 Attr2.2 Attr2.3 Attr2.4 Attr2.5 Attr2.6 Attr2.7
+CycD         1       1       1       1       1       1       1
+Rb           0       0       0       0       0       0       0
+E2F          0       0       0       0       1       1       1
+CycE         1       0       0       0       0       1       1
+CycA         1       1       1       0       0       0       1
+p27          0       0       0       0       0       0       0
+Cdc20        0       0       1       1       0       0       0
+Cdh1         0       0       0       1       1       1       1
+UbcH10       0       1       1       1       1       0       0
+CycB         0       1       1       0       0       0       0
+
+> getAttractors(newnet2)
+Error in stopifnot(inherits(network, "BooleanNetwork") || inherits(network,  : 
+  object 'newnet2' not found
+> ### Crear tu propia red
+> sink('TestNet.bn') # crea un archivo de texto plano llamado 'TestNet.bn'
+> cat ("targets, factors\n")# en el primer renglón agrega el texto 'targets, factors' y luego un enter
+> cat("Gen1, Gen2 | !Gen3\n")# texto del segundo renglón
+> cat("Gen2, Gen3 & Gen4\n")# texto del tercer renglón
+> cat("Gen3, !Gen1\n") # texto del cuarto renglón
+> cat("Gen4, 1\n") # texto del quinto renglón
+> sink() # dejamos de escribir en el archivo de texto
+> MyNetwork <- loadNetwork("TestNet.bn") # cargar la red del archivo 'TestNet.bn'
+> MyNetwork
+Boolean network with 4 genes
+
+Involved genes:
+Gen1 Gen2 Gen3 Gen4
+
+Transition functions:
+Gen1 = Gen2 | !Gen3
+Gen2 = Gen3 & Gen4
+Gen3 = !Gen1
+Gen4 = 1
+
+Knocked-out and over-expressed genes:
+Gen4 = 1
+> newAtt <- getAttractors(MyNetwork)
+> plotAttractors(newAtt)
+$`1`
+     Attr1.1
+Gen1       1
+Gen2       0
+Gen3       0
+Gen4       1
+
+$`2`
+     Attr2.1 Attr2.2
+Gen1       0       1
+Gen2       1       0
+Gen3       0       1
+Gen4       1       1
