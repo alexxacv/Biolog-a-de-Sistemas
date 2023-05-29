@@ -1,0 +1,5 @@
+targets, factors
+Gen1, Gen2 | !Gen3
+Gen2, Gen3 & Gen4
+Gen3, !Gen1
+Gen4, 1
